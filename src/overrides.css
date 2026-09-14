@@ -1,0 +1,40 @@
+/* Final cascade overrides kept separate from the compact base stylesheet. */
+header {
+  padding-inline: max(calc((100% - 1700px) / 2), 70px);
+}
+main {
+  width: min(1400px, calc(100% - 80px));
+}
+.sticky-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 8;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+.sticky-nav.visible {
+  transform: translateY(0);
+}
+
+/* A room description stays in view while its individual tour image set passes. */
+.tour-room {
+  min-height: 820px;
+  align-items: start;
+}
+.tour-copy {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+   height: fit-content;
+}
+.tour-pics {
+  min-height: 770px;
+}
+.tour-pics .photo:first-child {
+  grid-column: span 2;
+  height: 270px;
+}
+.tour-pics .photo:last-child {
+  grid-column: span 2;
+  height: 240px;
+}
